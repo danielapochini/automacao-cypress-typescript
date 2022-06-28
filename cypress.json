@@ -1,9 +1,10 @@
 {
-    "watchForFileChanges": false,
-    "viewportWidth": 1000,
-    "viewportHeight": 1000,
-    "waitForAnimations": true,
-    "video": false,
-    "failOnStatusCode": false
-
+	"defaultCommandTimeout": 10000,
+	"watchForFileChanges": false,
+	"viewportWidth": 1000,
+	"viewportHeight": 1000,
+	"waitForAnimations": true,
+	"failOnStatusCode": false,
+	"video": false,
+	"reporter": "cypress-mochawesome-reporter"
 }
