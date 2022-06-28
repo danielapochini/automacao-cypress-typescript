@@ -2,7 +2,7 @@ describe('Find Transaction Test', () => {
 	before(() => {
 		cy.visit('http://zero.webappsecurity.com/index.html')
 		cy.get('#signin_button').click()
-		cy.fixture('user').then(user => {
+		cy.fixture('loginData').then(user => {
 			const username = user.id
 			const password = user.pwd
 			cy.login(username, password)
@@ -19,8 +19,6 @@ describe('Find Transaction Test', () => {
 
 	it('should display results', () => {
 		cy.get('#filtered_transactions_for_account').should('be.visible')
-		cy.get('tbody > tr')
-			.its('length')
-			.should('be.gt', 0)
+		cy.get('tbody > tr').its('length').should('be.gt', 0)
 	})
 })

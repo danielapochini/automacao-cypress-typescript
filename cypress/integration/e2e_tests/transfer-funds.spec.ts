@@ -2,7 +2,7 @@ describe('Transfer Funds Verification Test', () => {
 	before(() => {
 		cy.visit('http://zero.webappsecurity.com/index.html')
 		cy.get('#signin_button').click()
-		cy.fixture('user').then(user => {
+		cy.fixture('loginData').then(user => {
 			const username = user.id
 			const password = user.pwd
 			cy.login(username, password)
