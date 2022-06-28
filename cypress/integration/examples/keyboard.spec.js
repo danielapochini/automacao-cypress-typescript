@@ -4,4 +4,3 @@ describe('Keyboard press simulation', () => {
 		cy.get('#searchTerm').type('just some text {enter}')
 	})
 })
- 
