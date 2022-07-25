@@ -6,7 +6,7 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run"
   },
-  "author": "",
+  "author": "Daniela Pochini",
   "license": "ISC",
   "description": "",
   "dependencies": {
