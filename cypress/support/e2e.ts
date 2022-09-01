@@ -19,4 +19,29 @@ import './app'
 import './userActions'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+import addContext from 'mochawesome/addContext'
+
 require('cypress-xpath')
+
+afterEach(function () {
+	cy.screenshot({ capture: 'runner' })
+})
+
+Cypress.on('test:after:run', test => {
+	let filename = ''
+	if (test.state === 'passed' || test.state === 'failed') {
+		filename = `${test.title} -- after each hook.png`
+		addMochaContext(test, filename)
+	}
+})
+
+function addMochaContext(test: Cypress.ObjectLike, filename: string) {
+	const screenshotsFolder = Cypress.config('screenshotsFolder')
+	addContext(
+		{ test },
+		{
+			title: 'Screenshot',
+			value: `../screenshots/${Cypress.spec.name}/${filename}`,
+		}
+	)
+}
